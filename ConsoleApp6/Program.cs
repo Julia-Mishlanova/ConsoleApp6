@@ -6,7 +6,6 @@ namespace ConsoleApp6
 {
     internal class Program
     {
-        static readonly char[] VOWELS = { 'a', 'e', 'i', 'o', 'u' };
         static void Main(string[] args)
         {
             Console.WriteLine("Введите строку...");
@@ -26,6 +25,7 @@ namespace ConsoleApp6
 
         public static void DisplayWordsStartingWithVowel(string output)
         {
+            var vowels = new char[] { 'a', 'e', 'i', 'o', 'u' };
             var words = output.Split(' ');
 
             for (int i = 0; i < words.Length; i++)
@@ -33,7 +33,7 @@ namespace ConsoleApp6
                 var firstLetter = words[i].FirstOrDefault();
                 var lowerLetter = char.ToLower(firstLetter);
 
-                if (VOWELS.Contains(lowerLetter))
+                if (vowels.Contains(lowerLetter))
                 {
                     Console.WriteLine(words[i]);
                 }
